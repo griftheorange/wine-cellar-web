@@ -2,12 +2,15 @@
 
 <%= form_tag user_login_path do %>
     <%= label_tag "Username: " %>
-    <%= text_field_tag "Username" %>
+    <%= text_field_tag "user[username]" %>
     <br>
     <%= label_tag "Password: " %>
-    <%=  text_field_tag "Password" %>
+    <%=  text_field_tag "user[password]" %>
     <br>
     <%= submit_tag "Login" %>
+<% end%>
+<% if flash[:no_match]%>
+    <p class="error"><%= flash[:no_match] %></p>
 <% end%>
 <br>
 <%= form_tag new_user_path, method: "GET" do %>

@@ -7,4 +7,8 @@
     <%= f.text_field :password%>
     <br>
     <%= f.submit "Create New User" %>
+    <br>
+    <% if flash[:already_exists]%>
+       <p> <%= flash[:already_exists] %></p>
+    <% end%>
 <% end%>
