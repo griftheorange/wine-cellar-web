@@ -1,2 +1,6 @@
 <h1>Welcome <%= User.find(session[:user]).username %></h1>
+<%= link_to "My Reviews", reviews_path %>
+<br>
+<%= link_to "My Cellars", cellars_path %>
+<br>
 <%= link_to "Logout", app_login_path%>
