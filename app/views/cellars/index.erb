@@ -1,0 +1,12 @@
+<h1><%= @user.username %>'s Cellars</h1>
+
+<ul>
+<% @cellars.each do |cellar|%>
+    <li><%= link_to cellar.name, cellar %></li>
+    <br>
+<% end%>
+</ul>
+
+<%= link_to "Create New Cellar", new_cellar_path %>
+<br>
+<%= link_to "Home Page", app_home_path %>

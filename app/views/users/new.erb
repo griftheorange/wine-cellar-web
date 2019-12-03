@@ -11,7 +11,7 @@
 <% end%>
 
 <% if flash[:create]%>
-       <p> <%= flash[:create] %></p>
+       <p class="error"> <%= flash[:create] %></p>
     <% end%>
     
 <%= form_tag app_login_path, method: "GET" do%>

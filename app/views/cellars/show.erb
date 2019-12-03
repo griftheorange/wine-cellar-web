@@ -1,0 +1,19 @@
+<h1>Cellar Name: <%= @cellar.name %></h1>
+<p><strong>Description</strong></p>
+<p><%= @cellar.description %></p>
+
+<h2><strong>Bottles: </strong></h2>
+<% @cellar.bottles.each do |bottle|%>
+    <strong>Brand: </strong><%= bottle.brand %> <br>
+    <strong>Type: </strong><%= bottle.wine_type %> <br>
+    <strong>Color: </strong><%= bottle.color %> <br>
+    <strong>Year: </strong><%= bottle.year %> <br>
+    <%= link_to "This bottle", bottle %> <br>
+    <br>
+<% end%>
+<br>
+<br>
+
+<%= link_to "Edit Cellar", edit_cellar_path %>
+<%= button_to "Delete Cellar", @cellar, method: "delete" %>
+<%= link_to "Back to Cellars", cellars_path %>

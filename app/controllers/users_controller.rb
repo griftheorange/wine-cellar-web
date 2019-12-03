@@ -21,7 +21,6 @@ class UsersController < ApplicationController
                 success_log(@user)
             else
                 !@user.errors.messages[:username].empty? ? flash[:create]=@user.errors.messages[:username][0] : flash[:create]=@user.errors.messages[:password][0]
-                byebug
                 redirect_to new_user_path
             end
         else
