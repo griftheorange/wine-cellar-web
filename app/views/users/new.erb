@@ -8,7 +8,12 @@
     <br>
     <%= f.submit "Create New User" %>
     <br>
-    <% if flash[:already_exists]%>
-       <p> <%= flash[:already_exists] %></p>
+<% end%>
+
+<% if flash[:create]%>
+       <p> <%= flash[:create] %></p>
     <% end%>
+    
+<%= form_tag app_login_path, method: "GET" do%>
+    <%= submit_tag "Back to Login" %>
 <% end%>
