@@ -1,0 +1,2 @@
+class CellarsController < ApplicationController
+end

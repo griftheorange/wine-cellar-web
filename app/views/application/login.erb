@@ -1,0 +1,15 @@
+<h1>Hello! Welcome to LushLocal</h1>
+
+<%= form_tag user_login_path do %>
+    <%= label_tag "Username: " %>
+    <%= text_field_tag "Username" %>
+    <br>
+    <%= label_tag "Password: " %>
+    <%=  text_field_tag "Password" %>
+    <br>
+    <%= submit_tag "Login" %>
+<% end%>
+<br>
+<%= form_tag new_user_path, method: "GET" do %>
+    <%= submit_tag "New User" %>
+<% end%>
