@@ -1,0 +1,10 @@
+<h1> Wine Reviews</h1>
+
+<ul><% @reviews.each do |review| %>
+    <%= link_to review.bottle.brand  , review_path(review) %> - <%= review.rating %>
+
+</ul>
+
+
+    <%= button_to "Create a new review!", new_review_path %>
+<% end %>
