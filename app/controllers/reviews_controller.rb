@@ -12,8 +12,15 @@ class ReviewsController < ApplicationController
     end
     
     def new
-        @user = User.find(session[:user])
-        @review = Review.new
+        if params[:select]
+            flash[:select] = params[:select]
+            @user = User.find(session[:user])
+            @review = Review.new
+        else
+            flash[:select] = nil
+            @user = User.find(session[:user])
+            @review = Review.new
+        end
     end
 
     def create
