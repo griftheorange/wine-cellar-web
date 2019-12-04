@@ -20,3 +20,6 @@
 <br>
 <%= f.submit "Submit your review" %>
 <% end %>
+<% if flash[:review]%>
+    <p class="error"><%= flash[:review] %></p>
+    <% end %>

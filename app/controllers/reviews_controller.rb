@@ -19,8 +19,12 @@ class ReviewsController < ApplicationController
     def create
 
         @review = Review.create(review_params)
-    
-        redirect_to reviews_path
+        if @review.valid?
+            redirect_to reviews_path
+        else
+            flash[:review] = @review.errors.messages.first[1][0]
+            redirect_to new_review_path
+        end
     end
     
     def destroy
