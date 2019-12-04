@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'cellars/:id/remove', to: 'stashes#remove', as: 'remove_from_cellar'
   post 'bottles/search', to: 'bottles#search', as: 'search_bottles'
   post 'bottles/linker', to: 'bottles#linker', as: 'bottle_linker'
+  post 'stashes/add', to: 'stashes#add', as: 'add_bottle_to_cellar'
 end

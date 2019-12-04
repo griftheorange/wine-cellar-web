@@ -1,4 +1,18 @@
-<h1><strong>Brand: </strong><%= @bottle.brand %></h1>
-<h3><strong>Type: </strong><%= @bottle.wine_type %></h3>
-<h3><strong>Color: </strong><%= @bottle.color %></h3>
-<h3><strong>Year: </strong><%= @bottle.year %></h3>
+<br>
+<br>
+<%= render partial: "bottle", locals: {bottle: @bottle}%>
+<br>
+<%= form_tag add_bottle_to_cellar_path do%>
+    <input type="hidden" name="stash[bottle_id]" value=<%= @bottle.id %>>
+    <%= collection_select :stash, :cellar_id, User.find(session[:user]).cellars, :id, :name%>
+    <%= submit_tag "Add This Bottle to a Cellar" %>
+<% end%>
+<br>
+<h3>Reviews:</h3>
+    <% @reviews.each do |review|%>
+        <p><%= link_to "#{review.user.username}: #{review.rating}", review %></p>
+    <% end%>
+<h3>Cellars:</h3>
+    <% @cellars.each do |cellar|%>
+        <p><%= link_to "#{cellar.user.username}: #{cellar.name}", cellar %></p>
+    <% end%>
