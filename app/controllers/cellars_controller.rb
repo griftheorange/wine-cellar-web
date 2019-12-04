@@ -22,6 +22,7 @@ class CellarsController < ApplicationController
 
     def show
         @cellar = Cellar.find(params[:id])
+        @bottles = @cellar.bottles
     end
 
     def destroy

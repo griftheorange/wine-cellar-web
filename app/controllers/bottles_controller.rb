@@ -1,5 +1,4 @@
 class BottlesController < ApplicationController
-
     layout "top_bar"
 
     def index
@@ -25,6 +24,12 @@ class BottlesController < ApplicationController
             @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", @search[:specific_attr])
             has_results(@bottles)
         end
+    end
+
+    def linker
+        @search = params.require(:bottle).permit(:attr, :specific_attr)
+        @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", @search[:specific_attr])
+        render :index
     end
 
     def has_results(bots)
