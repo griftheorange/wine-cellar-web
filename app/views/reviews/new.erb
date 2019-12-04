@@ -2,6 +2,7 @@
 
 <%= form_for @review do |f| %>
 
+<input type="hidden", name= "review[user_id]", value= <%= @user.id %>>
 <%= f.label :bottle_id, "Choose your Wine" %>
 <%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string %> <br>
 
