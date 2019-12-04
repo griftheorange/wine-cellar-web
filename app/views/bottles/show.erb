@@ -7,6 +7,7 @@
     <%= collection_select :stash, :cellar_id, User.find(session[:user]).cellars, :id, :name%>
     <%= submit_tag "Add This Bottle to a Cellar" %>
 <% end%>
+<%= link_to "Write a review", {:controller => "reviews", :action => "new", :select => @bottle.id } %>
 <br>
 <h3>Reviews:</h3>
     <% @reviews.each do |review|%>
