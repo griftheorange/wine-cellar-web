@@ -6,11 +6,4 @@
 <% end%>
 </h1>
 <br>
-<% @bottles.each do |bottle|%>
-    <strong>Brand: </strong><%= bottle.brand %> <br>
-    <strong>Type: </strong><%= bottle.wine_type %> <br>
-    <strong>Color: </strong><%= bottle.color %> <br>
-    <strong>Year: </strong><%= bottle.year %> <br>
-    <%= link_to "This bottle", bottle %> <br>
-    <br>
-<% end %>
+<%= render partial: 'bottle', collection: @bottles%>
