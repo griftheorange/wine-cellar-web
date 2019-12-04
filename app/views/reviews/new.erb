@@ -1,0 +1,21 @@
+<h1> Create a new review!</h1>
+
+<%= form_for @review do |f| %>
+
+<%= f.label :bottle_id, "Choose your Wine" %>
+<%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string %> <br>
+
+<%= f.label :rating, "Rate this Wine" %>
+<%= f.radio_button :rating , 1%>1
+<%= f.radio_button :rating , 2%>2
+<%= f.radio_button :rating , 3%>3
+<%= f.radio_button :rating , 4%>4
+<%= f.radio_button :rating , 5%>5
+<br>
+
+<%= f.label :content, " Tell us more" %>
+<%= f.text_area :content %>
+
+<br>
+<%= f.submit "Submit your review" %>
+<% end %>
