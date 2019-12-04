@@ -3,3 +3,4 @@
 
 <h3> <%= "Rating: #{@review.rating} - Content: #{@review.content}"%> </h3>
 
+<%= link_to "Delete this review", review_path(@review), method: :delete %>

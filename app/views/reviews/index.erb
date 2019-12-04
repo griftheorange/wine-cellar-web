@@ -1,13 +1,8 @@
 <h1> Wine Reviews</h1>
 
 <ul><% @reviews.each do |review| %>
-<<<<<<< HEAD
     <%= link_to review.bottle.brand  , review %> - <%= review.rating %> <br>
     <% end %>
-=======
-    <%= link_to review.bottle.brand  , review_path(review) %> - <%= review.rating %>
-
->>>>>>> ecfc97abc17e670c0713904c3f867d84fe79a192
 </ul>
 <br>
 
