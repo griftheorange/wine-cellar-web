@@ -1,4 +1,6 @@
 class CellarsController < ApplicationController
+    layout "top_bar"
+
     def index
         @user = User.find(session[:user])
         @cellars = @user.cellars
@@ -34,14 +36,19 @@ class CellarsController < ApplicationController
 
     def update
         @cellar = Cellar.new(p)
-        if @cellar.valid?
-            @cellar = Cellar.find(params[:id])
-            @cellar.update(p)
-            redirect_to @cellar
+        @o_cellar = Cellar.find(params[:id])
+        other_cellar_names = @o_cellar.user.cellars.map{|cellar| cellar.name}
+        other_cellar_names.delete(@o_cellar.name)
+
+        if @cellar.name == nil || other_cellar_names.include?(@cellar.name)
+            flash[:cellar] = "You need a uniq name for your cellar."
+            redirect_to edit_cellar_path
+        elsif @cellar.description == ""
+            flash[:cellar] = "You need a description for your cellar."
+            redirect_to edit_cellar_path
         else
-            flash[:cellar] = @cellar.errors.messages.first[1][0]
-            @cellar = Cellar.find(params[:id])
-            render :new
+            @o_cellar.update(p)
+            redirect_to @o_cellar
         end
     end
 

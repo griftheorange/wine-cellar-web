@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
+    layout "top_bar"
+
+    
     def login
-        @user = User.find_by(p)
+        @user = User.find_by(username: p[:username])
         if @user
-            success_log(@user)
+            if @user.authenticate(p[:password])
+                success_log(@user)
+            else 
+                flash[:no_match] = "Invalid Password"
+                redirect_to app_login_path
+            end
         else
-            flash[:no_match] = "There is no username/password matching that input! Stop drinking so much!"
+            flash[:no_match] = "We can't find a match for that username, try making an account!"
             redirect_to app_login_path
         end
     end

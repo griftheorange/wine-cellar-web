@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post '/users/login', to: "users#login", as: "user_login"
   get  'app/home', to: 'application#home', as: 'app_home'
   get 'cellars/:id/stash', to: 'stashes#new', as: 'add_to_cellar'
+  get 'cellars/:id/remove', to: 'stashes#remove', as: 'remove_from_cellar'
+  post 'bottles/search', to: 'bottles#search', as: 'search_bottles'
 end
