@@ -1,0 +1,16 @@
+<h1>Add a Bottle to the Site! No Funny Business!</h1>
+<%= form_for @bottle do |f|%>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %> <br>
+    <%= f.label :wine_type %>
+    <%= f.text_field :wine_type %> <br>
+    <%= f.label :color %>
+    <%= f.text_field :color %> <br>
+    <%= f.label :year %>
+    <%= f.number_field :year %> <br>
+    <%= f.submit "Create Bottle" %>
+<% end%>
+<br>
+<% flash.each do |k, v|%>
+    <p class="error"><%="#{k.drop_type}: #{v.drop_type}"%></p>
+<% end%>

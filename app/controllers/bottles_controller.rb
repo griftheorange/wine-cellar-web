@@ -16,6 +16,22 @@ class BottlesController < ApplicationController
         @bottle = Bottle.find(params[:id])
     end
 
+    def new
+        @bottle = Bottle.new
+    end
+
+    def create
+        @bottle = Bottle.create(p)
+        if @bottle.errors.empty?
+            redirect_to @bottle
+        else
+            @bottle.errors.each{|k, v|
+                flash[k] = v
+            }
+            redirect_to new_bottle_path
+        end
+    end
+
     def search
         if params[:name] == ""
             @attribute = params.require(:bottle).permit(:attribute)[:attribute]
@@ -41,4 +57,9 @@ class BottlesController < ApplicationController
         end
     end
 
+    private
+
+    def p
+        params.require(:bottle).permit(:brand, :wine_type, :color, :year)
+    end
 end
