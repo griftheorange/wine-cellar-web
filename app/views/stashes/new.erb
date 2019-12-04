@@ -1,0 +1,4 @@
+<h1>Add a Bottle to <%= @cellar.name %></h1>
+<%= form_for @stash do |f| %>
+    <%= f.collection_select :bottle, Bottle.all, :id, :bottle_string %>
+<% end%>

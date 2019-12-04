@@ -11,8 +11,8 @@
 <% end%>
 
 <% if flash[:create]%>
-       <p class="error"> <%= flash[:create] %></p>
-    <% end%>
+    <p class="error"> <%= flash[:create] %></p>
+ <% end%>
     
 <%= form_tag app_login_path, method: "GET" do%>
     <%= submit_tag "Back to Login" %>
