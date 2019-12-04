@@ -1,4 +1,6 @@
 class CellarsController < ApplicationController
+    layout "top_bar"
+
     def index
         @user = User.find(session[:user])
         @cellars = @user.cellars

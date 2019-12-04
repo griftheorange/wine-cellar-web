@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    layout "top_bar"
+
     def index
         @user = User.find(session[:user])
         @reviews = @user.reviews 

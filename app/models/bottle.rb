@@ -19,9 +19,3 @@ class Bottle < ApplicationRecord
         }.uniq
     end
 end
-
-class String
-    def drop_type
-        self.itself.gsub(/[_-]/, ' ').split(' ').map(&:capitalize).join(' ')
-    end
-end

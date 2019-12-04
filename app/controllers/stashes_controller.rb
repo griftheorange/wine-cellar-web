@@ -1,4 +1,5 @@
 class StashesController < ApplicationController
+    layout "top_bar"
     skip_before_action :verify_authenticity_token, :only => [:destroy]
 
     def new

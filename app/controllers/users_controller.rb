@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+    layout "top_bar"
+
+    
     def login
         @user = User.find_by(username: p[:username])
         if @user
