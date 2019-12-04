@@ -1,0 +1,7 @@
+<h1>Search by <%= @attribute.drop_type %></h1>
+<%= form_tag bottles_path do %>
+    <%= collection_select :bottle, :id, Bottle.uniq_attributes(@attribute), :itself, :itself%> <br>
+    
+<% end%>
+<br>
+<%= link_to "Back to Home Page", app_home_path %>
