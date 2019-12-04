@@ -12,6 +12,11 @@ class StashesController < ApplicationController
         redirect_to cellar_path(p[:cellar_id])
     end
 
+    def add
+        Stash.find_or_create_by(p)
+        redirect_to Bottle.find(p[:bottle_id])
+    end
+
     def remove
         @cellar = Cellar.find(params[:id])
     end
