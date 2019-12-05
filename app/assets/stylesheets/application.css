@@ -157,3 +157,20 @@
     display: flex;
     margin: 1em;
   }
+
+  a {
+    font-family: didot;
+    color: #521907;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .navbar {
+    background-color: #e8dccb ;
+    
+    margin: .3rem;
+    padding: 0;
+    border-width: 0;
+  }
+
+  
