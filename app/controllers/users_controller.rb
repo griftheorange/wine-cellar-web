@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end
 
     def success_log(user)
-        session[:user] = user.id
+        session[:user_id] = user.id
         redirect_to app_home_path
     end
 

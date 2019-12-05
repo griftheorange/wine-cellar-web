@@ -15,7 +15,7 @@ class BottlesController < ApplicationController
     def show
         @bottle = Bottle.find(params[:id])
         @reviews = @bottle.reviews
-        @cellars = User.find(session[:user]).cellars.select{|cellar| @bottle.cellars.include?(cellar)}
+        @cellars = User.find(session[:user_id]).cellars.select{|cellar| @bottle.cellars.include?(cellar)}
     end
 
     def new

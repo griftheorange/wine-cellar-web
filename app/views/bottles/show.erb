@@ -4,7 +4,7 @@
 <br>
 <%= form_tag add_bottle_to_cellar_path do%>
     <input type="hidden" name="stash[bottle_id]" value=<%= @bottle.id %>>
-    <%= collection_select :stash, :cellar_id, User.find(session[:user]).cellars, :id, :name%>
+    <%= collection_select :stash, :cellar_id, User.find(session[:user_id]).cellars, :id, :name%>
     <%= submit_tag "Add This Bottle to a Cellar" %>
 <% end%>
 <%= link_to "Write a review", {:controller => "reviews", :action => "new", :select => @bottle.id } %>

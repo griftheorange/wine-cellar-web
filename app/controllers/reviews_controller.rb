@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
     layout "top_bar"
 
     def index
-        @user = User.find(session[:user])
+        @user = User.find(session[:user_id])
         @reviews = @user.reviews 
     end
     
@@ -14,11 +14,11 @@ class ReviewsController < ApplicationController
     def new
         if params[:select]
             flash[:select] = params[:select]
-            @user = User.find(session[:user])
+            @user = User.find(session[:user_id])
             @review = Review.new
         else
             flash[:select] = nil
-            @user = User.find(session[:user])
+            @user = User.find(session[:user_id])
             @review = Review.new
         end
     end

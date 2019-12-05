@@ -1,10 +1,9 @@
 <h1> Wine Reviews</h1>
 
 <ul><% @reviews.each do |review| %>
-    <%= link_to review.bottle.bottle_string  , review %> - <%= review.rating %> <br>
+    <li><%= link_to review.bottle.bottle_string  , review %> - <%= review.rating %></li> <br>
     <% end %>
 </ul>
 <br>
 
-
-    <%= link_to "Create a new review!", new_review_path %>
+<%= link_to "Create a new review!", new_review_path %>

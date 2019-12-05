@@ -2,7 +2,7 @@ class CellarsController < ApplicationController
     layout "top_bar"
 
     def index
-        @user = User.find(session[:user])
+        @user = User.find(session[:user_id])
         @cellars = @user.cellars
     end
 
@@ -57,7 +57,7 @@ class CellarsController < ApplicationController
 
     def p
         p = params.require(:cellar).permit(:name, :description)
-        p[:user_id] = session[:user]
+        p[:user_id] = session[:user_id]
         p
     end
 end

@@ -1,4 +1,4 @@
-<h1>Welcome <%= User.find(session[:user]).username %></h1>
+<h1>Welcome <%= User.find(session[:user_id]).username %></h1>
 <%= form_tag search_bottles_path do %>
     <%= text_field_tag :name %>
     <%= collection_select :bottle, :attribute, Bottle.select_column_names, :itself, :drop_type%>
@@ -16,4 +16,3 @@
 <br>
 <%= link_to "My Cellars", cellars_path %>
 <br>
-<%= link_to "Logout", app_login_path%>
