@@ -211,10 +211,25 @@
 
   .navbar {
     background-color: #e8dccb ;
-    
-    margin: .3rem;
+    display: flex;
     padding: 0;
-    border-width: 0;
+    width: 100%;
   }
 
+  .navbar div {
+    margin: auto;
+  }
+
+ .bottle a{
+
+  font-size: .8em;
+  font-weight: bold;
+
+ }
+
+ .searchbar {
+  /* width: 20em;
+  border-top: 10px;
+  background-color: #631808; */
+ }
   

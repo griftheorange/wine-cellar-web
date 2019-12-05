@@ -11,11 +11,31 @@
 
   <body>
     <header class="navbar">
+    <div >
       <%= link_to "Main Menu", app_home_path %>
+        </div>  
+    <div>|</div>
+    <div>
       <%= link_to "Cellars", cellars_path %>
+        </div>  
+
+    <div>|</div>
+
+    <div >
       <%= link_to "Reviews", reviews_path %>
+     </div>  
+    <div>|</div>
+
+    <div>  
       <%= link_to "Wine Stats", app_analytics_path %>
+      </div>  
+
+    <div>|</div>
+
+    <div>  
       <%= link_to "Logout", app_login_path%>
+    </div>  
+
     </header>
     <%= yield %>
   </body>
