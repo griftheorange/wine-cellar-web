@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
     end
 
     def home
-        @about = File.open('storage/about_us.txt').read
     end
 
     def analytics
