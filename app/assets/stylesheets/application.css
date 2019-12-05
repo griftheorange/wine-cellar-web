@@ -22,13 +22,29 @@
       font-family: Verdana, Arial;
       color: #521907;
       text-align: center;
+      font-size: 2em
   }
 
   h1.log {
     font-size: 5.2em;
   }
 
-  #brand {
+  h3 {
+    font-family: Verdana, Arial;
+    color: #521907;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  h1.brand {
+      margin-bottom: 0.2em;
+  }
+
+  h3#main_username {
+      margin-top: 0.2em;
+  }
+
+  .brand {
     font-family: Audry, Didot, Verdana, Arial;
     font-weight: 900;
   }
@@ -146,16 +162,44 @@
       word-wrap: break-word;
       margin: auto;
       height: 30em;
-      padding: 1em;
+      padding: 0.7em;
       border-left: 0.2em double #a59c7a;
       border-top: 0.2em double #a59c7a;
       border-left: 0.2em double #a59c7a;
       overflow: scroll;
+      background-color: #f3eee0;
   }
 
   div.bottle {
-    display: flex;
-    margin: 1em;
+    display: block;
+    padding: 0.5em;
+    background-color:#e8dccb;
+    border-left: 0.3em solid #9c9378;
+    width: 15em;
+    margin: auto;
+  }
+
+  div.trait{
+      display: flex;
+  }
+
+  .section {
+      color: #631808;
+  }
+
+  .section.head {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #about p {
+    color: #631808;
+    text-align: center;
+  }
+
+  .trait strong {
+      font-family: Times;
+      font-weight: bold;
   }
 
   a {

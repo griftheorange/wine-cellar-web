@@ -1,4 +1,4 @@
-<div class="bottle">
+<div class="bottle section">
     <div class="trait">
         <strong>Brand: </strong>
         <%= button_to bottle.brand, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:brand, :specific_attr=>bottle.brand}}, :method=>:post%>
