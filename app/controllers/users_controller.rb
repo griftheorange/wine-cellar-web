@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    layout "top_bar"
-
+    layout "top_bar", :except => :new
+    skip_before_action :require_login, only: [:new, :create]
     
     def login
         @user = User.find_by(username: p[:username])

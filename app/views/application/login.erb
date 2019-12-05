@@ -1,18 +1,17 @@
-<h1>Hello! Welcome to LushLocal</h1>
+<h1 id="brand" class="log">LushLuxé</h1>
 
 <%= form_tag user_login_path do %>
-    <%= label_tag "Username: " %>
-    <%= text_field_tag "user[username]" %>
+    <%= label_tag "username", "Username: ", class: "log" %>
+    <%= text_field_tag "user[username]", nil, class: "log" %>
     <br>
-    <%= label_tag "Password: " %>
-    <%=  text_field_tag "user[password]" %>
+    <%= label_tag "password", "Password: ", class: "log" %>
+    <%= password_field_tag "user[password]", nil, class: "log" %>
     <br>
-    <%= submit_tag "Login" %>
+    <%= submit_tag "Login", class: "log" %>
+<% end%>
+<%= form_tag new_user_path, method: "GET" do %>
+    <%= submit_tag "New User", class: "log" %>
 <% end%>
 <% if flash[:no_match]%>
-    <p class="error"><%= flash[:no_match] %></p>
-<% end%>
-<br>
-<%= form_tag new_user_path, method: "GET" do %>
-    <%= submit_tag "New User" %>
+    <p class="error log"><%= flash[:no_match] %></p>
 <% end%>

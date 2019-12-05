@@ -1,6 +1,26 @@
-<strong>Brand: </strong><span><%= button_to bottle.brand, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:brand, :specific_attr=>bottle.brand}}, :method=>:post%></span>
-<strong>Type: </strong><%= button_to bottle.wine_type, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:wine_type, :specific_attr=>bottle.wine_type}}, :method=>:post%></span>
-<strong>Color: </strong><%= button_to bottle.color, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:color, :specific_attr=>bottle.color}}, :method=>:post%></span>
-<strong>Year: </strong><%= button_to bottle.year, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:year, :specific_attr=>bottle.year}}, :method=>:post%></span>
-<%= link_to "This bottle", bottle %> <br>
+<div class="bottle">
+    <div class="trait">
+        <strong>Brand: </strong>
+        <%= button_to bottle.brand, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:brand, :specific_attr=>bottle.brand}}, :method=>:post%>
+    </div>
+
+    <div class="trait">
+        <strong>Type: </strong>
+        <%= button_to bottle.wine_type, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:wine_type, :specific_attr=>bottle.wine_type}}, :method=>:post%>
+    </div>
+
+    <div class="trait">
+        <strong>Color: </strong>
+        <%= button_to bottle.color, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:color, :specific_attr=>bottle.color}}, :method=>:post%>
+    </div>
+
+    <div class="trait">
+        <strong>Year: </strong>
+        <%= button_to bottle.year, {:controller=>:bottles, :action=>:linker, :search=>true, :bottle=>{:attr=>:year, :specific_attr=>bottle.year}}, :method=>:post%>
+    </div>
+
+    <div class="link">
+        <%= link_to "This bottle", bottle %>
+    </div>
+</div>
 <br>

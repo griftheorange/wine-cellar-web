@@ -1,12 +1,26 @@
 <h1>Welcome <%= User.find(session[:user_id]).username %></h1>
 <%= form_tag search_bottles_path do %>
-    <%= text_field_tag :name %>
+    <%= text_field_tag :name, nil, class: "searchbar" %>
     <%= collection_select :bottle, :attribute, Bottle.select_column_names, :itself, :drop_type%>
     <%= submit_tag "Search Bottles" %>
 <% end%>
 <% if flash[:no_results]%>
     <p class="error"><%= flash[:no_results] %></p>
 <% end%>
+
+<article id="home">
+    <section class="block" id="suggestion">
+        <h3>Suggested Bottles</h3>
+        <p>
+            <%= render partial: 'bottles/bottle', collection: Bottle.all.sample(3)%>
+        </p>
+    </section>
+    <section class="block" id="about">
+        <h3>About Us</h3>
+        <p><%= @about %></p>
+    </section>
+</article>
+
 <br>
 <%= link_to "All Bottles", bottles_path %> 
 <br>

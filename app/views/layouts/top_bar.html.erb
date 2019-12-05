@@ -10,10 +10,13 @@
   </head>
 
   <body>
-    <%= link_to "Main Menu", app_home_path %>
-    <%= link_to "Cellars", cellars_path %>
-    <%= link_to "Reviews", reviews_path %>
-    <%= link_to "Logout", app_login_path%>
+    <header class="navbar">
+      <%= link_to "Main Menu", app_home_path %>
+      <%= link_to "Cellars", cellars_path %>
+      <%= link_to "Reviews", reviews_path %>
+      <%= link_to "Wine Stats", app_analytics_path %>
+      <%= link_to "Logout", app_login_path%>
+    </header>
     <%= yield %>
   </body>
 </html>

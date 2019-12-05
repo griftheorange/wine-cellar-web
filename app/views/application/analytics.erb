@@ -1,0 +1,56 @@
+<h1>Wine Stats for Balmer Peak Enthusiasts!</h1>
+<div>
+    <table>
+        <tr><th colspan="3">Most Stashed Bottles</th></tr>
+        <tr>
+            <th><strong>Bottle</strong></th>
+            <th><strong>Number of Cellars</strong></th>
+            <th><strong>Number of Users</strong></th>
+            <th><strong>Cellars/User with this Bottle</strong></th>
+        </tr>
+        <% @most_stashed_bottles.each do |bottle|%>
+            <tr>
+                <td><%= bottle.bottle_string %></td>
+                <td><%= bottle.cellars.length %></td>
+                <td><%= bottle.cellars.map{|cellar| cellar.user}.uniq.length %></td>
+                <td><%= bottle.cellars.length/(bottle.cellars.map{|cellar| cellar.user}.uniq.length.to_f) %></td>
+            </tr>
+        <% end%>
+    </table>
+</div>
+<br>
+<div>
+    <table>
+        <tr><th colspan="3">Most Reviewed Bottles</th></tr>
+        <tr>
+            <th><strong>Bottle</strong></th>
+            <th><strong>Number of Reviews</strong></th>
+            <th><strong>Average Review Length</strong></th>
+        </tr>
+        <% @most_reviewed_bottles.each do |bottle|%>
+            <tr>
+                <td><%= bottle.bottle_string %></td>
+                <td><%= bottle.reviews.length %></td>
+                <td><%= bottle.average_review_length %> chars</td>
+            </tr>
+        <% end%>
+    </table>
+</div>
+<br>
+<div>
+    <table>
+        <tr><th colspan="2">Highest Rated Bottles</th></tr>
+        <tr>
+            <th><strong>Bottle</strong></th>
+            <th><strong>Average Rating</strong></th>
+        </tr>
+        <% @highest_rated_bottles.each do |bottle|%>
+            <tr>
+                <td><%= bottle.bottle_string %></td>
+                <td><%= bottle.average_rating %></td>
+            </tr>
+        <% end%>
+    </table>
+</div>
+<br>
+<p>Average Cellar Size for All Users: <%= @average_cellar_size %></p>

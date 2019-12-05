@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
     end
 
     def home
+        @about = File.open('storage/about_us.txt').read
+    end
+
+    def analytics
+        @highest_rated_bottles = Bottle.highest_rated
+        @most_reviewed_bottles = Bottle.most_reviewed
+        @most_stashed_bottles = Bottle.most_cellars
+        @average_cellar_size = Cellar.average_size
     end
 
     private

@@ -24,8 +24,19 @@ c1 = Cellar.create(user_id: u2.id, name: "Fav",description: "cool",)
 c2 = Cellar.create(user_id: u1.id, name: "Worst",description: "bad",)
 c3 = Cellar.create(user_id: u2.id, name: "idk",description: "eehh",)
 c4 = Cellar.create(user_id: u1.id, name: "yes",description: "yum",)
-
+c5 = Cellar.create(user_id: u2.id, name: "Me",description: "cool",)
+c6 = Cellar.create(user_id: u1.id, name: "You",description: "bad",)
+c7 = Cellar.create(user_id: u2.id, name: "Party Time",description: "eehh",)
+c8 = Cellar.create(user_id: u1.id, name: "Yeet Sqwad",description: "yum",)
 
 
 s1 = Stash.create(bottle_id: b6.id, cellar_id: c3.id)
 s2 = Stash.create(bottle_id: b4.id, cellar_id: c2.id)
+arr = ["xchghfdzsadzxc, dfghkjghfgtrshch", "sdxfccmjhggf64e5rt", "Dzfvbnklkfy765", "sghkjhgesx", "xcmnfdxgzsfgdhhgSDfbx"]
+100.times do
+    Review.create(content: arr.sample, rating: (1..5).to_a.sample, bottle_id: Bottle.all.sample.id, user_id: User.all.sample.id)
+end
+
+100.times do
+    Stash.create(bottle_id: Bottle.all.sample.id, cellar_id: Cellar.all.sample.id)
+end

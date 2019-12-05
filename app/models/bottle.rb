@@ -22,4 +22,38 @@ class Bottle < ApplicationRecord
             bottle.send(attr)
         }.uniq
     end
+
+    #array of tied highest rated bottles
+    def self.highest_rated
+        Bottle.all.select{|bottle|
+            Bottle.all.max_by{|bottle| bottle.average_rating}.average_rating == bottle.average_rating
+        }
+    end
+
+    def average_rating
+        if self.reviews.empty?
+            0
+        else
+            self.reviews.map{|review| review.rating}.reduce(0, :+)/(self.reviews.length.to_f)
+        end
+    end
+
+    #array of most reviewed bottles
+    def self.most_reviewed
+        Bottle.all.select{|bottle|
+            Bottle.all.max_by{|bottle| bottle.reviews.length}.reviews.length == bottle.reviews.length
+        }
+    end
+
+    #array of bottles with the most cellars
+    def self.most_cellars
+        Bottle.all.select{|bottle|
+            Bottle.all.max_by{|bottle| bottle.cellars.length}.cellars.length == bottle.cellars.length
+        }
+    end
+
+    def average_review_length
+        self.reviews.map{|review| review.content.length}.reduce(0, :+)/(self.reviews.length.to_f)
+    end
+
 end

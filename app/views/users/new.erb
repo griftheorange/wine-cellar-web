@@ -1,19 +1,19 @@
 <h1>New User!</h1>
 <%= form_for @user do |f|%>
-    <%= f.label :username, value: "Username: " %>
-    <%= f.text_field :username %>
+    <%= f.label :username, value: "Username: ", class: "log" %>
+    <%= f.text_field :username, class: "log" %>
     <br>
-    <%= f.label :password, value: "Password: " %>
-    <%= f.text_field :password%>
+    <%= f.label :password, value: "Password: ", class: "log" %>
+    <%= f.text_field :password, class: "log" %>
     <br>
-    <%= f.submit "Create New User" %>
+    <%= f.submit "Create New User", class: "log new" %>
     <br>
+<% end%>
+    
+<%= form_tag app_login_path, method: "GET" do%>
+    <%= submit_tag "Back to Login", class: "log new" %>
 <% end%>
 
 <% if flash[:create]%>
-    <p class="error"> <%= flash[:create] %></p>
+    <p class="error log"> <%= flash[:create] %></p>
  <% end%>
-    
-<%= form_tag app_login_path, method: "GET" do%>
-    <%= submit_tag "Back to Login" %>
-<% end%>

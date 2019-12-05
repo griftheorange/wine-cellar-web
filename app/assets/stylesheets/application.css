@@ -13,3 +13,147 @@
  *= require_tree .
  *= require_self
  */
+
+ table, th, td {
+    border: 1px solid black;
+  }
+
+  h1 {
+      font-family: Verdana, Arial;
+      color: #521907;
+      text-align: center;
+  }
+
+  h1.log {
+    font-size: 5.2em;
+  }
+
+  #brand {
+    font-family: Audry, Didot, Verdana, Arial;
+    font-weight: 900;
+  }
+
+  body {
+      background-color: #faf5e3;
+  }
+
+  label {
+    font-family: Times, Verdana, Arial;
+    color: #521907;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  label.log {
+    width: 9em;
+    font-size: 2.0em;
+  }
+
+  form {
+      margin-left: auto;
+      margin-right: auto;
+      padding: auto;
+      width: 80%;
+  }
+
+  /* input {
+      display: block;
+      margin: auto;
+  } */
+
+  input[type="text"] {
+      display: block;
+      margin: auto;
+      border: none;
+      font-family: Times, Arial;
+      color: #521907;
+      border-bottom: 0.1em solid #521907;
+      background-color: #faf5e3;
+  }
+
+  input.searchbar {
+      margin: 0em;
+      display: inline;
+  }
+  input.log[type="text"] {
+    display: block;
+    margin: auto;
+    font-size: 1.2em;
+    border-bottom: 0.1em solid #521907;
+  }
+
+  input[type="password"] {
+    display: block;
+    margin: auto;
+    border: none;
+    font-family: Times, Arial;
+    color: #521907;
+    font-size: 1.2em;
+    border-bottom: 0.1em solid #521907;
+    background-color: #faf5e3;
+  }
+
+  input[type="submit"] {
+    background-color: #efe6ca;
+    border-bottom: 0.15em solid #541e12;
+    border-right: 0.15em solid #541e12;
+  }
+
+  input.log[type="submit"]{
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    width: 6em;
+    font-size: 1em
+  }
+
+  input.log.new {
+    display: block;
+    margin: auto;
+    width: 10em
+  }
+
+  .error {
+    font-family: Times, Arial;
+    font-weight: bold;
+    color: #6d200f;
+    border-right: 0.2em solid #942209;
+    border-left: 0.2em solid #942209;
+    padding: 1em;
+    background-color: #efe6c9;
+    text-align: center;
+  }
+
+  .log.error {
+    display: block;
+    margin: auto;
+    display: flex;
+    font-size: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2.5em;
+    width: 15em;
+  }
+
+  article#home {
+    display: flex;
+  }
+
+  article#home section.block {
+      width: 45%;
+      word-wrap: break-word;
+      margin: auto;
+      height: 30em;
+      padding: 1em;
+      border-left: 0.2em double #a59c7a;
+      border-top: 0.2em double #a59c7a;
+      border-left: 0.2em double #a59c7a;
+      overflow: scroll;
+  }
+
+  div.bottle {
+    display: flex;
+    margin: 1em;
+  }
