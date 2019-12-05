@@ -194,7 +194,7 @@
 
   #about p {
     color: #631808;
-    text-align: center;
+    text-align: left;
   }
 
   .trait strong {
@@ -217,4 +217,17 @@
     border-width: 0;
   }
 
-  
+  .about_block img {
+      max-width: auto;
+      height: 9.5em;
+      margin-left: 1.3em;
+      border: 0.2em solid #521907;
+  }
+
+  section.about_block {
+      display: flex;
+  }
+
+  .about_block div p:first-of-type {
+      margin-top: 0em;
+  }

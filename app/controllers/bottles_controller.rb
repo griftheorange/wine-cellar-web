@@ -39,7 +39,7 @@ class BottlesController < ApplicationController
             @attribute = params.require(:bottle).permit(:attribute)[:attribute]
         else
             @search = {attr: params[:bottle][:attribute], specific_attr: params[:name]}
-            @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", @search[:specific_attr])
+            @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", "%#{@search[:specific_attr]}%")
             has_results(@bottles)
         end
     end
