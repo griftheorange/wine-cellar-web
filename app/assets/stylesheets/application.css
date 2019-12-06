@@ -85,6 +85,7 @@
       margin: auto;
       border: none;
       font-family: Times, Arial;
+      font-size: 1em;
       color: #521907;
       border-bottom: 0.1em solid #521907;
       background-color: #faf5e3;
@@ -93,6 +94,7 @@
   input[type="number"] {
     display: block;
     margin: auto;
+    font-size: 1em;
     border: none;
     font-family: Times, Arial;
     color: #521907;
@@ -264,6 +266,10 @@
     margin-bottom: 1em;
   }
 
+  .searchform > * {
+    font-size: 1.1em;
+  }
+
   select {
     color: #521907;
     border: 0;
@@ -291,7 +297,7 @@
   }
 
   #cre_bot_sub {
-      margin-left: 44%;
+      margin-left: 46%;
   }
 
   table, th, td {
@@ -353,6 +359,9 @@
 
   textarea {
       background: #f3ebe1;
+      color: #521907;
+      font-family: didot, verdana;
+      font-size: 1em;
       margin-left: 7%;
       margin-bottom: 1em;
       width: 90%;
