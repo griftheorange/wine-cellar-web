@@ -1,4 +1,7 @@
-<h1 class="brand">LushLuxé</h1>
+<div class="title main">
+    <h1 class="brand">LushLuxé</h1>
+    <%= image_tag "logo.jpg", class: "main" %>
+</div>
 <h3 id="main_username"><%= User.find(session[:user_id]).username %></h3>
 <%= form_tag search_bottles_path, class: "searchform" do %>
     <%= text_field_tag :name, nil, class: "searchbar", style: "width:45%;" , placeholder: "Search" %>
