@@ -4,8 +4,8 @@ Review.destroy_all
 Cellar.destroy_all
 Stash.destroy_all
 
-u1 = User.create(username: "Jakarai", password: "Jakarai",)
-u2 = User.create(username: "Griffin", password: "Griffin",)
+u1 = User.create(username: "Jakarai", password: "Jakarai", hint: "Try your name")
+u2 = User.create(username: "Griffin", password: "Griffin", hint: "Me")
 
 b1 = Bottle.create(brand: "Barefoot",wine_type: "Rose",color: "Pink", year: 500, image: "BareFootC_Rose.png")
 b2 = Bottle.create(brand: "Dark Horse", wine_type: "Rose" ,color: "Pink" ,year: 1998, image: "")

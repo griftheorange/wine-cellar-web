@@ -1,0 +1,12 @@
+<h1 class="log brand">LushLuxé</h1>
+
+<%= form_tag hint_path do %>
+    <%= label_tag "username", "Username: ", class: "log" %>
+    <%= text_field_tag "user[username]", nil, class: "log" %>
+    <br>
+    <%= submit_tag "Hint", class: "log" %>
+<% end%>
+<p><%= link_to "Back to Login", app_login_path %></p>
+<% if flash[:no_match]%>
+    <p class="error log"><%= flash[:no_match] %></p>
+<% end%>

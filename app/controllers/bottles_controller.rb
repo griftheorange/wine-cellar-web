@@ -46,7 +46,7 @@ class BottlesController < ApplicationController
 
     def linker
         @search = params.require(:bottle).permit(:attr, :specific_attr)
-        @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", @search[:specific_attr])
+        @bottles = Bottle.where(" #{@search[:attr]} LIKE ? ", "%#{@search[:specific_attr]}%")
         render :index
     end
 

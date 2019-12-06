@@ -5,7 +5,7 @@ class Bottle < ApplicationRecord
 
     validates :brand, :wine_type, :color, :year, presence: true
     validates :year, inclusion: {in: 300..(Time.now.strftime("%Y").to_i), message: "Can't be earlier than 300AD or later than the present."}
-    validates :brand, uniqueness: {scope: [:wine_type, :color, :year], message: "Can't duplicate"}
+    validates :brand, uniqueness: {scope: [:wine_type, :color, :year], message: "Can't duplicate", case_sensitive: false}
     
     def bottle_string
         "#{self.brand}, #{self.wine_type}, Year: #{self.year}"

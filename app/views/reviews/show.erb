@@ -1,8 +1,10 @@
 <h1><%= link_to @review.bottle.bottle_string, @review.bottle %></h1>
 
 
-<h3> <%= "Rating: #{@review.rating}" %></h3>
-<p><%=  "#{@review.content}" %></p>
+<h3 class="rating"> <%= "Rating: #{@review.rating}" %></h3>
+<div class="content">
+    <p class="content"><%=  "#{@review.content}" %></p>
+</div>
 
 <% if @review.user.id == session[:user_id]%>
     <div class="links">

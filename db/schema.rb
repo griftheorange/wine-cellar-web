@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_154445) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "hint"
   end
 
   add_foreign_key "cellars", "users"

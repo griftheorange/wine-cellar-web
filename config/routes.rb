@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   post 'bottles/linker', to: 'bottles#linker', as: 'bottle_linker'
   post 'stashes/add', to: 'stashes#add', as: 'add_bottle_to_cellar'
   get 'app/analytics', to: 'application#analytics', as: 'app_analytics'
+  get 'app/forgot', to: 'application#forgot', as: 'forgot_password'
+  post 'app/hint', to: 'application#hint', as: 'hint'
 end

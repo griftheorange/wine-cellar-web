@@ -22,18 +22,23 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.find_by(username: p[:username])
-        if !@user
-            @user = User.create(p)
-            if @user.valid?
-                success_log(@user)
+        if params[:twenty_one] != "true"
+            flash[:create] = "You must be 21 or older to make an account with us, sorry!"
+            redirect_to new_user_path
+        else
+            @user = User.find_by(username: p[:username])
+            if !@user
+                @user = User.create(p)
+                if @user.valid?
+                    success_log(@user)
+                else
+                    !@user.errors.messages[:username].empty? ? flash[:create]=@user.errors.messages[:username][0] : flash[:create]=@user.errors.messages[:password][1]
+                    redirect_to new_user_path
+                end
             else
-                !@user.errors.messages[:username].empty? ? flash[:create]=@user.errors.messages[:username][0] : flash[:create]=@user.errors.messages[:password][1]
+                flash[:create] = "That username already exists, get more creative."
                 redirect_to new_user_path
             end
-        else
-            flash[:create] = "That username already exists, get more creative."
-            redirect_to new_user_path
         end
     end
 
@@ -49,6 +54,6 @@ class UsersController < ApplicationController
     private
 
     def p
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :hint)
     end
 end
