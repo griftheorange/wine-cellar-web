@@ -12,6 +12,7 @@
 <%= form_tag new_user_path, method: "GET" do %>
     <%= submit_tag "New User", class: "log" %>
 <% end%>
+<p><%= link_to "Forgot Password", forgot_password_path %></p>
 <% if flash[:no_match]%>
     <p class="error log"><%= flash[:no_match] %></p>
 <% end%>

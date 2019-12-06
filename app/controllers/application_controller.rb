@@ -1,10 +1,22 @@
 class ApplicationController < ActionController::Base
-    layout "top_bar", :except => :login
+    layout "top_bar", :except => [:login, :forgot]
     before_action :require_login
-    skip_before_action :require_login, only: [:login]
+    skip_before_action :require_login, only: [:login, :forgot, :hint]
 
     def login
         session[:user_id] = nil
+    end
+
+    def forgot
+    end
+
+    def hint
+        p = params.require(:user).permit(:username)
+        u = User.find_by(username: p[:username])
+        if u
+            flash[:no_match] = "#{u.hint}"
+        end
+        redirect_to forgot_password_path
     end
 
     def home

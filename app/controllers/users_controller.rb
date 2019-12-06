@@ -54,6 +54,6 @@ class UsersController < ApplicationController
     private
 
     def p
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :hint)
     end
 end
