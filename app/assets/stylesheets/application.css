@@ -432,3 +432,25 @@
   padding: 10px;
   margin-left: 1em;
 }
+
+div.title {
+    display: flex;
+    width: 27em;
+    margin: auto;
+}
+
+div.title img {
+    max-height: 4em;
+    margin-top: 4.6em;
+}
+
+div.title img.main {
+    margin-top: 1.8em;
+    max-height: 1.5em;
+}
+
+div.title.main {
+    display: flex;
+    width: 10em;
+    margin: auto;
+}
