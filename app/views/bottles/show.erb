@@ -1,4 +1,8 @@
 <h1><%= @bottle.bottle_string %></h1>
+<div class="bottle_images">
+<%= image_tag @bottle.image %>
+</div>
+
 <br>
 <%= render partial: "bottle", locals: {bottle: @bottle}%>
 <br>
