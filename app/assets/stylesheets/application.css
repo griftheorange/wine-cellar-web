@@ -247,3 +247,14 @@
   .about_block div p:first-of-type {
       margin-top: 0em;
   }
+
+  .searchform {
+    margin-left: 25%;
+    margin-bottom: 1em;
+  }
+
+  select {
+    color: #521907;
+    border: 0;
+    background-color: #e8dccb;
+  }

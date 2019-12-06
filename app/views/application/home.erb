@@ -1,7 +1,7 @@
 <h1 class="brand">LushLuxé</h1>
 <h3 id="main_username"><%= User.find(session[:user_id]).username %></h3>
-<%= form_tag search_bottles_path do %>
-    <%= text_field_tag :name, nil, class: "searchbar", style: "width:400px;" , placeholder: "Search" %>
+<%= form_tag search_bottles_path, class: "searchform" do %>
+    <%= text_field_tag :name, nil, class: "searchbar", style: "width:45%;" , placeholder: "Search" %>
     <%= collection_select :bottle, :attribute, Bottle.select_column_names, :itself, :drop_type%>
     <%= submit_tag "Search Bottles" %>
 <% end%>
