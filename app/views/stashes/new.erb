@@ -1,8 +1,12 @@
 <h1>Add a Bottle to <%= @cellar.name %></h1>
-<%= form_for @stash do |f| %>
-    <input type="hidden" name="stash[cellar_id]" value=<%= @cellar.id %>>
-    <%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string %> <br>
-    <%= f.submit "Add Bottle to Cellar" %> <br>
-<% end%>
+<div class="form_center add_bottle">
+    <%= form_for @stash do |f| %>
+        <input type="hidden" name="stash[cellar_id]" value=<%= @cellar.id %>>
+        <%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string %>
+        <%= f.submit "Add Bottle to Cellar" %> <br>
+    <% end%>
+</div>
 <br>
-<%= link_to "Back to Cellar", @cellar %>
+<div class="links">
+    <%= link_to "Back to Cellar", @cellar %>
+</div>

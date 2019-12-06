@@ -2,13 +2,17 @@
 <p><strong>Description</strong></p>
 <p><%= @cellar.description %></p>
 
-<h2><strong>Bottles: </strong></h2>
+<h3><strong>Bottles: </strong></h3>
 <%= render partial: '/bottles/bottle', collection: @bottles%>
 <br>
 <br>
 
-<%= link_to "Add Bottle to Cellar", add_to_cellar_path%> <br>
-<%= link_to "Remove Bottle from this Cellar", remove_from_cellar_path %> <br>
-<%= link_to "Edit Cellar", edit_cellar_path %>
-<%= button_to "Delete Cellar", @cellar, method: "delete" %>
-<%= link_to "Back to Cellars", cellars_path %>
+<div id="cre_bot_sub">
+    <%= button_to "Delete Cellar", @cellar, method: "delete" %>
+</div>
+<div class="links">
+    <%= link_to "Add Bottle to Cellar", add_to_cellar_path%> <br>
+    <%= link_to "Remove Bottle from this Cellar", remove_from_cellar_path %> <br>
+    <%= link_to "Edit Cellar", edit_cellar_path %> <br>
+    <%= link_to "Back to Cellars", cellars_path %>
+</div>

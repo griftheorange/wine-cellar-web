@@ -2,18 +2,22 @@
 <br>
 <%= render partial: "bottle", locals: {bottle: @bottle}%>
 <br>
-<%= form_tag add_bottle_to_cellar_path do%>
-    <input type="hidden" name="stash[bottle_id]" value=<%= @bottle.id %>>
-    <%= collection_select :stash, :cellar_id, User.find(session[:user_id]).cellars, :id, :name%>
-    <%= submit_tag "Add This Bottle to a Cellar" %>
-<% end%>
-<%= link_to "Write a review", {:controller => "reviews", :action => "new", :select => @bottle.id } %>
+<div class="form_center bot_show">
+    <%= form_tag add_bottle_to_cellar_path do%>
+        <input type="hidden" name="stash[bottle_id]" value=<%= @bottle.id %>>
+        <%= collection_select :stash, :cellar_id, User.find(session[:user_id]).cellars, :id, :name%>
+        <%= submit_tag "Add This Bottle to a Cellar" %>
+    <% end%>
+</div>
+<div class="links">
+    <%= link_to "Write a review", {:controller => "reviews", :action => "new", :select => @bottle.id } %>
+</div>
 <br>
 <h3>Reviews:</h3>
     <% @reviews.each do |review|%>
         <p><%= link_to "#{review.user.username}: #{review.rating}", review %></p>
     <% end%>
 <h3>Cellars:</h3>
-    <% @cellars.each do |cellar|%>
-        <p><%= link_to "#{cellar.user.username}: #{cellar.name}", cellar %></p>
-    <% end%>
+<% @cellars.each do |cellar|%>
+    <p><%= link_to "#{cellar.user.username}: #{cellar.name}", cellar %></p>
+<% end%>

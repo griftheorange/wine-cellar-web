@@ -8,7 +8,9 @@
     <%= f.text_field :color %> <br>
     <%= f.label :year %>
     <%= f.number_field :year %> <br>
-    <%= f.submit "Create Bottle" %>
+    <div id="cre_bot_sub">
+        <%= f.submit "Create Bottle" %>
+    </div>
 <% end%>
 <br>
 <% flash.each do |k, v|%>
