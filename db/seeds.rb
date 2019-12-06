@@ -20,14 +20,14 @@ b10 = Bottle.create(brand: "Santa Margherita", wine_type: "Pinot Grigio",color: 
 
 r1 = Review.create(content: "very good, will buy again", rating: 5, bottle_id: b5.id, user_id: u2.id)
 r2 = Review.create(content: "very good, will buy again", rating: 5, bottle_id: b7.id, user_id: u1.id)
-c1 = Cellar.create(user_id: u2.id, name: "Fav",description: "cool",)
-c2 = Cellar.create(user_id: u1.id, name: "Worst",description: "bad",)
-c3 = Cellar.create(user_id: u2.id, name: "idk",description: "eehh",)
-c4 = Cellar.create(user_id: u1.id, name: "yes",description: "yum",)
-c5 = Cellar.create(user_id: u2.id, name: "Me",description: "cool",)
-c6 = Cellar.create(user_id: u1.id, name: "You",description: "bad",)
-c7 = Cellar.create(user_id: u2.id, name: "Party Time",description: "eehh",)
-c8 = Cellar.create(user_id: u1.id, name: "Yeet Sqwad",description: "yum",)
+c1 = Cellar.create(user_id: u2.id, name: "After Party",description: "cool for a party.",)
+c2 = Cellar.create(user_id: u1.id, name: "For a Ball",description: "Great for a ball.",)
+c3 = Cellar.create(user_id: u2.id, name: "Gallery Night",description: "Best for a gallery night.",)
+c4 = Cellar.create(user_id: u1.id, name: "Graduation",description: "Works wonders for graduation.",)
+c5 = Cellar.create(user_id: u2.id, name: "Stressed",description: "Eases you when stressed.",)
+c6 = Cellar.create(user_id: u1.id, name: "Birthday",description: "Must have for your birthday.",)
+c7 = Cellar.create(user_id: u2.id, name: "Christmas special",description: "Fantastic for a Christmas special.",)
+c8 = Cellar.create(user_id: u1.id, name: "New Year Baby",description: "Perfect for going to straight from Dec 31st to Jan 2nd.",)
 
 
 s1 = Stash.create(bottle_id: b6.id, cellar_id: c3.id)
