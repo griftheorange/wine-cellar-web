@@ -12,9 +12,13 @@
     <%= f.text_area :description %>
     <br>
     <% @cellar.id ? str = "Update Cellar" : "Create Cellar"%>
-    <%= f.submit str %>
+    <div id="cre_bot_sub">
+        <%= f.submit str %>
+    </div>
 <% end%>
 <% if flash[:cellar]%>
     <p class="error"><%= flash[:cellar] %></p>
 <% end %>
-<%= link_to "Back to all Cellars", cellars_path %>
+<div class="links">
+    <%= link_to "Back to all Cellars", cellars_path %>
+</div>

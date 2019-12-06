@@ -1,10 +1,14 @@
 <h1>Search by <%= @attribute.drop_type %></h1>
 <%= form_tag bottles_path do %>
-    <input type="hidden" name="_method", value="GET">
-    <input type="hidden" name="bottle[attr]" value=<%= @attribute %>>
-    <input type="hidden" name="search" value="true">
-    <%= collection_select :bottle, :specific_attr, Bottle.uniq_attributes(@attribute), :itself, :itself%> <br>
-    <%= submit_tag "Search" %>
+    <div class="form_center">
+        <input type="hidden" name="_method", value="GET">
+        <input type="hidden" name="bottle[attr]" value=<%= @attribute %>>
+        <input type="hidden" name="search" value="true">
+        <%= collection_select :bottle, :specific_attr, Bottle.uniq_attributes(@attribute), :itself, :itself%>
+        <%= submit_tag "Search" %>
+    </div>
 <% end%>
 <br>
-<%= link_to "Back to Home Page", app_home_path %>
+<div class="links">
+    <%= link_to "Back to Home Page", app_home_path %>
+</div>

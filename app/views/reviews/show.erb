@@ -1,8 +1,11 @@
 <h1><%= link_to @review.bottle.bottle_string, @review.bottle %></h1>
 
 
-<h3> <%= "Rating: #{@review.rating} - Content: #{@review.content}"%> </h3>
+<h3> <%= "Rating: #{@review.rating}" %></h3>
+<p><%=  "#{@review.content}" %></p>
 
 <% if @review.user.id == session[:user_id]%>
-    <%= link_to "Delete this review", review_path(@review), method: :delete %>
+    <div class="links">
+        <%= link_to "Delete this review", review_path(@review), method: :delete %>
+    </div>
 <% end%>

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
             if @user.valid?
                 success_log(@user)
             else
-                !@user.errors.messages[:username].empty? ? flash[:create]=@user.errors.messages[:username][0] : flash[:create]=@user.errors.messages[:password][0]
+                !@user.errors.messages[:username].empty? ? flash[:create]=@user.errors.messages[:username][0] : flash[:create]=@user.errors.messages[:password][1]
                 redirect_to new_user_path
             end
         else

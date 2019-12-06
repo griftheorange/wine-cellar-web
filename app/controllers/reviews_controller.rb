@@ -35,7 +35,6 @@ class ReviewsController < ApplicationController
     end
     
     def destroy
-        byebug
         Review.find_by(id: params[:id]).destroy
         redirect_to reviews_path
     end

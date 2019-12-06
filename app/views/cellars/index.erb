@@ -1,10 +1,14 @@
 <h1><%= @user.username %>'s Cellars</h1>
 
-<ul>
-<% @cellars.each do |cellar|%>
-    <li><%= link_to cellar.name, cellar %></li>
-    <br>
-<% end%>
-</ul>
+<div class="lists">
+    <ul>
+        <% @cellars.each do |cellar|%>
+            <li><%= link_to cellar.name, cellar %></li>
+            <br>
+        <% end%>
+    </ul>
+</div>
 
-<%= link_to "Create New Cellar", new_cellar_path %>
+<div class="links">
+    <%= link_to "Create New Cellar", new_cellar_path %>
+</div>

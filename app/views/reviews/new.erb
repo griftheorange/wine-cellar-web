@@ -4,22 +4,28 @@
 
 <input type="hidden", name= "review[user_id]", value= <%= @user.id %>>
 <%= f.label :bottle_id, "Choose your Wine" %>
-<%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string, {:selected => flash[:select]}%> <br>
+<div class="form_center new_review">
+    <%= f.collection_select :bottle_id, Bottle.all, :id, :bottle_string, {:selected => flash[:select]}%> <br>
+</div>
 
 <%= f.label :rating, "Rate this Wine" %>
-<%= f.radio_button :rating , 1%>1
-<%= f.radio_button :rating , 2%>2
-<%= f.radio_button :rating , 3%>3
-<%= f.radio_button :rating , 4%>4
-<%= f.radio_button :rating , 5%>5
+<div class="form_center radio">
+    <%= f.radio_button :rating , 1%>1
+    <%= f.radio_button :rating , 2%>2
+    <%= f.radio_button :rating , 3%>3
+    <%= f.radio_button :rating , 4%>4
+    <%= f.radio_button :rating , 5%>5
+</div>
 <br>
 
 <%= f.label :content, " Tell us more" %>
 <%= f.text_area :content %>
 
 <br>
-<%= f.submit "Submit your review" %>
+<div id="cre_bot_sub" class="new_review">
+    <%= f.submit "Submit your review" %>
+</div>
 <% end %>
 <% if flash[:review]%>
     <p class="error"><%= flash[:review] %></p>
-    <% end %>
+<% end %>

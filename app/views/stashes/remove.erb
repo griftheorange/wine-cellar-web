@@ -1,7 +1,9 @@
 <h1>Remove a Bottle from <%= @cellar.name %></h1>
-<%= form_tag stash_path do %>
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="stash[cellar_id]" value=<%= @cellar.id %>>
-    <%= collection_select :stash, :bottle_id, @cellar.bottles , :id, :bottle_string %> <br>
-    <%= submit_tag "Remove this Bottle" %>
-<% end%>
+<div class="form_center remove_bot">
+    <%= form_tag stash_path do %>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="stash[cellar_id]" value=<%= @cellar.id %>>
+        <%= collection_select :stash, :bottle_id, @cellar.bottles , :id, :bottle_string %>
+        <%= submit_tag "Remove this Bottle" %>
+    <% end%>
+</div>
