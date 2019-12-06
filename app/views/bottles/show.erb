@@ -1,7 +1,9 @@
 <h1><%= @bottle.bottle_string %></h1>
+<% if @bottle.image%>
 <div class="bottle_images">
 <%= image_tag @bottle.image %>
 </div>
+<% end%>
 
 <br>
 <%= render partial: "bottle", locals: {bottle: @bottle}%>
