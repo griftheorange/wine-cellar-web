@@ -15,9 +15,9 @@
 <br>
 <h3>Reviews:</h3>
     <% @reviews.each do |review|%>
-        <p><%= link_to "#{review.user.username}: #{review.rating}", review %></p>
+        <p><%= link_to "#{review.user.username} - Rating: #{review.rating}", review %></p>
     <% end%>
 <h3>Cellars:</h3>
 <% @cellars.each do |cellar|%>
-    <p><%= link_to "#{cellar.user.username}: #{cellar.name}", cellar %></p>
+    <p><%= link_to "#{cellar.user.username} - Name: #{cellar.name}", cellar %></p>
 <% end%>

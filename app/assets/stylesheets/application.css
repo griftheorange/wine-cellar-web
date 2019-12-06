@@ -192,6 +192,10 @@
     margin: auto;
   }
 
+  div.bottle > * {
+    overflow: auto;
+  }
+
   div.trait{
       display: flex;
   }
@@ -255,6 +259,8 @@
 
   section.about_block {
       display: flex;
+      background-color: #eae2d8;;
+      padding: 1em;
   }
 
   .about_block div p:first-of-type {
@@ -300,7 +306,7 @@
       margin-left: 46%;
   }
 
-  table, th, td {
+  th, td {
     border: 1px solid #331a0d;
   }
 
@@ -355,7 +361,17 @@
       width: 50%
   }
 
+  div.lists {
+      width: 40em;
+      margin: auto;
+      background-color: #f5ebdd;
+  }
 
+  div.lists ul {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2.5em;
+  }
 
   textarea {
       background: #f3ebe1;
