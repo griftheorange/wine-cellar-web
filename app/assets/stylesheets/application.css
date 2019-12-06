@@ -433,18 +433,15 @@
   margin-left: 1em;
 }
 
-  .bottle_images {
-
-  display: block;
-  margin-left: 42%;
-  max-height: 20em;
-  width: 3em;
-
-
-  }
+  
 
   .bottle_images img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     max-height: 20em;
+    width: auto;
   }
 
 div.title {
