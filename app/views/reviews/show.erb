@@ -1,5 +1,8 @@
 <h1><%= link_to @review.bottle.bottle_string, @review.bottle %></h1>
 
+<div class="bottle_images">
+<%= image_tag @review.bottle.image %>
+</div>
 
 <h3 class="rating"> <%= "Rating: #{@review.rating}" %></h3>
 <div class="content">
