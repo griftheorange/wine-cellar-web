@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
     end
 
     def analytics
-        @highest_rated_bottles = Bottle.highest_rated
-        @most_reviewed_bottles = Bottle.most_reviewed
-        @most_stashed_bottles = Bottle.most_cellars
+        @highest_rated_bottles = Bottle.highest_rated[0,5]
+        @most_reviewed_bottles = Bottle.most_reviewed[0,5]
+        @most_stashed_bottles = Bottle.most_cellars[0,5]
         @average_cellar_size = Cellar.average_size
     end
 

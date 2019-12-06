@@ -25,9 +25,7 @@ class Bottle < ApplicationRecord
 
     #array of tied highest rated bottles
     def self.highest_rated
-        Bottle.all.select{|bottle|
-            Bottle.all.max_by{|bottle| bottle.average_rating}.average_rating == bottle.average_rating
-        }
+            Bottle.all.sort_by{|bottle| bottle.average_rating}.reverse
     end
 
     def average_rating
@@ -40,16 +38,12 @@ class Bottle < ApplicationRecord
 
     #array of most reviewed bottles
     def self.most_reviewed
-        Bottle.all.select{|bottle|
-            Bottle.all.max_by{|bottle| bottle.reviews.length}.reviews.length == bottle.reviews.length
-        }
+        Bottle.all.sort_by{|bottle| bottle.reviews.length}.reverse
     end
 
     #array of bottles with the most cellars
     def self.most_cellars
-        Bottle.all.select{|bottle|
-            Bottle.all.max_by{|bottle| bottle.cellars.length}.cellars.length == bottle.cellars.length
-        }
+        Bottle.all.sort_by{|bottle| bottle.cellars.length}.reverse
     end
 
     def average_review_length
