@@ -43,10 +43,10 @@ c8 = Cellar.create(user_id: u1.id, name: "New Year Baby",description: "Perfect f
 s1 = Stash.create(bottle_id: b6.id, cellar_id: c3.id)
 s2 = Stash.create(bottle_id: b4.id, cellar_id: c2.id)
 arr = ["xchghfdzsadzxc, dfghkjghfgtrshch", "sdxfccmjhggf64e5rt", "Dzfvbnklkfy765", "sghkjhgesx", "xcmnfdxgzsfgdhhgSDfbx"]
-100.times do
+15.times do
     Review.create(content: arr.sample, rating: (1..5).to_a.sample, bottle_id: Bottle.all.sample.id, user_id: User.all.sample.id)
 end
 
-100.times do
+25.times do
     Stash.create(bottle_id: Bottle.all.sample.id, cellar_id: Cellar.all.sample.id)
 end
