@@ -6,6 +6,10 @@
     <%= f.label :password, value: "Password: ", class: "log" %>
     <%= f.text_field :password, class: "log" %>
     <br>
+    <div class="age_check">
+        <label for="twenty_one">Are you 21 or older?</label>
+        <input type="checkbox" name="twenty_one" value="true">
+    </div>
     <%= f.submit "Create New User", class: "log new" %>
     <br>
 <% end%>

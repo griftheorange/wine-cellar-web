@@ -382,3 +382,51 @@
       margin-bottom: 1em;
       width: 90%;
   }
+
+  .rating {
+      font-size: 1.5em;
+  }
+
+  div.content {
+      width: 50%;
+      min-width: 25em;
+      max-width: 35em;
+      background: #ece4da;
+      border-right: 0.07em solid #521907;
+      border-left: 0.07em solid #521907;
+      margin: auto;
+      padding: 0.4em;
+      margin-bottom: 1em;
+  }
+
+  div.age_check {
+      display: flex;
+      margin: auto;
+      width: 13em;
+  }
+
+  div.age_check label {
+      margin-bottom: 1em;
+      font-size: 1.3em;
+      margin-right: 0em;
+      margin-left: 0em;
+      text-align: center;
+  }
+
+  /* div.age_check input {
+      margin-left: 1em;
+      height: 3em;
+      width: 3em;
+  } */
+
+  input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+  margin-left: 1em;
+}
